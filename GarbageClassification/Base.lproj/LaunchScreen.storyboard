@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenGrass" translatesAutoresizingMaskIntoConstraints="NO" id="tjN-D9-G0p" userLabel="launchImage">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="垃圾分类，减少污染，保护环境。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YE8-oO-A3o">
+                                <rect key="frame" x="88" y="64" width="238" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="238" id="0TX-u9-hj0"/>
+                                    <constraint firstAttribute="height" constant="30" id="CID-Fc-rgh"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tjN-D9-G0p" secondAttribute="trailing" id="74K-pO-e1h"/>
+                            <constraint firstItem="YE8-oO-A3o" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JMt-MN-dYM"/>
+                            <constraint firstItem="tjN-D9-G0p" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Xk1-NH-pd8"/>
+                            <constraint firstItem="tjN-D9-G0p" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="cec-Wv-cgs"/>
+                            <constraint firstItem="YE8-oO-A3o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="geE-4S-hnW"/>
+                            <constraint firstAttribute="bottom" secondItem="tjN-D9-G0p" secondAttribute="bottom" id="kzS-CS-nF8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="greenGrass" width="525" height="788"/>
+    </resources>
+</document>
