@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1B787022F0763800FC6E27 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B786F22F0763800FC6E27 /* MobileNet.mlmodel */; };
+		4D1B787222F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B787122F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
+		4D1B787422F076BF00FC6E27 /* ImageClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B787322F076BF00FC6E27 /* ImageClassificationViewController.swift */; };
 		4D80AD9C22C5FF190011EFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80AD9B22C5FF190011EFE9 /* AppDelegate.swift */; };
 		4D80ADA122C5FF190011EFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D80AD9F22C5FF190011EFE9 /* Main.storyboard */; };
 		4D80ADA422C5FF190011EFE9 /* GarbageClassification.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D80ADA222C5FF190011EFE9 /* GarbageClassification.xcdatamodeld */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D1B786F22F0763800FC6E27 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		4D1B787122F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
+		4D1B787322F076BF00FC6E27 /* ImageClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationViewController.swift; sourceTree = "<group>"; };
 		4D80AD9822C5FF190011EFE9 /* GarbageClassification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarbageClassification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D80AD9B22C5FF190011EFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D80ADA022C5FF190011EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D1B786E22F0761B00FC6E27 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				4D1B786F22F0763800FC6E27 /* MobileNet.mlmodel */,
+				4D1B787122F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				4D1B787322F076BF00FC6E27 /* ImageClassificationViewController.swift */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
 		4D80AD8F22C5FF190011EFE9 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +119,7 @@
 		4D80AD9A22C5FF190011EFE9 /* GarbageClassification */ = {
 			isa = PBXGroup;
 			children = (
+				4D1B786E22F0761B00FC6E27 /* AI */,
 				4D80AD9B22C5FF190011EFE9 /* AppDelegate.swift */,
 				4D80ADCC22C601430011EFE9 /* SearchViewController.swift */,
 				4D80AD9F22C5FF190011EFE9 /* Main.storyboard */,
@@ -265,8 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1B787422F076BF00FC6E27 /* ImageClassificationViewController.swift in Sources */,
 				4D80ADCF22C601880011EFE9 /* CoreDataHelper.swift in Sources */,
 				4D80AD9C22C5FF190011EFE9 /* AppDelegate.swift in Sources */,
+				4D1B787222F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				4D1B787022F0763800FC6E27 /* MobileNet.mlmodel in Sources */,
 				4D80ADCD22C601430011EFE9 /* SearchViewController.swift in Sources */,
 				4D80ADA422C5FF190011EFE9 /* GarbageClassification.xcdatamodeld in Sources */,
 				4D80ADD122C604850011EFE9 /* GarbageTableViewCell.swift in Sources */,
@@ -448,7 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28L2XK8HDR;
 				INFOPLIST_FILE = GarbageClassification/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28L2XK8HDR;
 				INFOPLIST_FILE = GarbageClassification/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
