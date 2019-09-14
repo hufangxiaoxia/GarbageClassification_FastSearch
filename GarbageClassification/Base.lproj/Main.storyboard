@@ -12,7 +12,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="PwO-L8-SK4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gzc-GK-7cA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="JMO-eq-Wld" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1QE-M3-buV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -24,6 +23,7 @@
                         <segue destination="Io7-B6-PDE" kind="relationship" relationship="viewControllers" id="PXg-Ce-XZg"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzc-GK-7cA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2194" y="-603"/>
         </scene>
@@ -157,7 +157,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BcA-8c-2z2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="PB4-Ao-Kcm"/>
+                    <tabBarItem key="tabBarItem" title="列表搜索" image="list" selectedImage="list" id="PB4-Ao-Kcm"/>
                     <navigationItem key="navigationItem" title="搜索类别" id="uAJ-O2-VSp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -169,7 +169,7 @@
             </objects>
             <point key="canvasLocation" x="-1108" y="-1074"/>
         </scene>
-        <!--Image Classification View Controller-->
+        <!--AI识别-->
         <scene sceneID="qjq-6r-INa">
             <objects>
                 <viewController id="Io7-B6-PDE" customClass="ImageClassificationViewController" customModule="GarbageClassification" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,13 +193,13 @@
                                 </items>
                             </toolbar>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8R-X9-r5U">
-                                <rect key="frame" x="16" y="497.5" width="138" height="60.5"/>
+                                <rect key="frame" x="16" y="498" width="109" height="60"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fj0-AX-SNC">
-                                    <rect key="frame" x="0.0" y="0.0" width="138" height="60.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="109" height="60"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Add a photo." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92H-H9-3G2" userLabel="Classification Label">
-                                            <rect key="frame" x="20" y="20" width="98" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="拍照识别" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92H-H9-3G2" userLabel="Classification Label">
+                                            <rect key="frame" x="20" y="20" width="69.5" height="20.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -235,7 +235,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ddg-aG-h0F"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="BfS-jd-NYC"/>
+                    <tabBarItem key="tabBarItem" title="AI识别" image="camera" selectedImage="camera" id="BfS-jd-NYC"/>
                     <navigationItem key="navigationItem" id="Z9K-Z0-geS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -249,4 +249,8 @@
             <point key="canvasLocation" x="-1108" y="-408"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="list" width="42.666667938232422" height="42.666667938232422"/>
+    </resources>
 </document>

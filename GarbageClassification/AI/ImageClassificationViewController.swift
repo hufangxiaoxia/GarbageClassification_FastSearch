@@ -10,16 +10,21 @@ import UIKit
 import CoreML
 import Vision
 import ImageIO
+import CoreData
 
 class ImageClassificationViewController: UIViewController {
+    var standardList = [NSManagedObject?]()
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var classificationLabel: UILabel!
     
+    override func viewDidLoad() {
+        standardList = CoreDataHelper.retrieveDataFromDB()
+    }
+    
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
             let model = try VNCoreMLModel(for: MobileNet().model)
-            
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                 self?.processClassifications(for: request, error: error)
             })
@@ -31,7 +36,7 @@ class ImageClassificationViewController: UIViewController {
     }()
     
     func updateClassifications(for image: UIImage) {
-        classificationLabel.text = "Classifying..."
+        classificationLabel.text = "识别中，请稍候..."
         
         let orientation = CGImagePropertyOrientation(image.imageOrientation)
         guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
@@ -49,41 +54,62 @@ class ImageClassificationViewController: UIViewController {
     func processClassifications(for request: VNRequest, error: Error?) {
         DispatchQueue.main.async {
             guard let results = request.results else {
-                self.classificationLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
+                self.classificationLabel.text = "图像无法识别，请换照片并重试。\n\(error!.localizedDescription)"
                 return
             }
             let classifications = results as! [VNClassificationObservation]
             
             if classifications.isEmpty {
-                self.classificationLabel.text = "Nothing recognized."
+                self.classificationLabel.text = "未识别到有效物体。"
             } else {
                 let topClassifications = classifications.prefix(2)
                 let descriptions = topClassifications.map { classification in
                     return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
-                self.classificationLabel.text = "Classification:\n" + descriptions.joined(separator: "\n")
+                self.classificationLabel.text = "识别结果:\n" + descriptions.joined(separator: "\n")
+                
+                let standardList = self.standardList
+                for descItem in descriptions {
+                    let words = descItem.components(separatedBy: " ")
+                    guard let recogItem = words.last else {continue}
+
+                    for standardItem in standardList {
+                        guard let standardItem = standardItem,
+                            let keyword = standardItem.value(forKey: "keywords") as? String else {continue}
+                        if keyword.contains(recogItem) {
+                            guard let garbageType = standardItem.value(forKey: "type") as? String else {continue}
+                            guard let itemName = standardItem.value(forKey: "name") as? String,
+                                let str: String = "物品：" + itemName + "(" + recogItem + ")\n分类：" + garbageType else {continue}
+                            self.classificationLabel.text = str
+                            return
+                        }
+                    }
+                }
+                
+                let phrase = descriptions.first?.components(separatedBy: ")").last
+                guard let strDefault: String = "物品：" + (phrase ?? "未知" ) + "\n分类：未知" else {return}
+                self.classificationLabel.text = strDefault
             }
         }
     }
     
     @IBAction func takePicture() {
-        // Show options for the source picker only if the camera is available.
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
             presentPhotoPicker(sourceType: .photoLibrary)
             return
         }
         
         let photoSourcePicker = UIAlertController()
-        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
+        let takePhoto = UIAlertAction(title: "拍照", style: .default) { [unowned self] _ in
             self.presentPhotoPicker(sourceType: .camera)
         }
-        let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
+        let choosePhoto = UIAlertAction(title: "选取本地照片", style: .default) { [unowned self] _ in
             self.presentPhotoPicker(sourceType: .photoLibrary)
         }
         
         photoSourcePicker.addAction(takePhoto)
         photoSourcePicker.addAction(choosePhoto)
-        photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        photoSourcePicker.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         
         present(photoSourcePicker, animated: true)
     }

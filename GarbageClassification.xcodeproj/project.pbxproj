@@ -10,6 +10,7 @@
 		4D1B787022F0763800FC6E27 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B786F22F0763800FC6E27 /* MobileNet.mlmodel */; };
 		4D1B787222F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B787122F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		4D1B787422F076BF00FC6E27 /* ImageClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B787322F076BF00FC6E27 /* ImageClassificationViewController.swift */; };
+		4D25E08322F885620044F96C /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4D25E08222F885620044F96C /* ImageClassifier.mlmodel */; };
 		4D80AD9C22C5FF190011EFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80AD9B22C5FF190011EFE9 /* AppDelegate.swift */; };
 		4D80ADA122C5FF190011EFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D80AD9F22C5FF190011EFE9 /* Main.storyboard */; };
 		4D80ADA422C5FF190011EFE9 /* GarbageClassification.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D80ADA222C5FF190011EFE9 /* GarbageClassification.xcdatamodeld */; };
@@ -43,6 +44,7 @@
 		4D1B786F22F0763800FC6E27 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		4D1B787122F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		4D1B787322F076BF00FC6E27 /* ImageClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationViewController.swift; sourceTree = "<group>"; };
+		4D25E08222F885620044F96C /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		4D80AD9822C5FF190011EFE9 /* GarbageClassification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarbageClassification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D80AD9B22C5FF190011EFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D80ADA022C5FF190011EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		4D1B786E22F0761B00FC6E27 /* AI */ = {
 			isa = PBXGroup;
 			children = (
+				4D25E08222F885620044F96C /* ImageClassifier.mlmodel */,
 				4D1B786F22F0763800FC6E27 /* MobileNet.mlmodel */,
 				4D1B787122F0765C00FC6E27 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
 				4D1B787322F076BF00FC6E27 /* ImageClassificationViewController.swift */,
@@ -289,6 +292,7 @@
 				4D1B787022F0763800FC6E27 /* MobileNet.mlmodel in Sources */,
 				4D80ADCD22C601430011EFE9 /* SearchViewController.swift in Sources */,
 				4D80ADA422C5FF190011EFE9 /* GarbageClassification.xcdatamodeld in Sources */,
+				4D25E08322F885620044F96C /* ImageClassifier.mlmodel in Sources */,
 				4D80ADD122C604850011EFE9 /* GarbageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
